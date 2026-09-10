@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#090E1A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glowD" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGradD)"/>
+  <circle cx="680" cy="100" r="140" fill="#0D9488" opacity="0.18" filter="url(#glowD)"/>
+  <circle cx="120" cy="400" r="120" fill="#3B82F6" opacity="0.15" filter="url(#glowD)"/>
+
+  <!-- Subtle Grid -->
+  <path d="M0 100 H800 M0 200 H800 M0 300 H800 M0 400 H800 M160 0 V500 M320 0 V500 M480 0 V500 M640 0 V500" stroke="#334155" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Main App Window Frame -->
+  <g transform="translate(60, 45)">
+    <!-- Window Container -->
+    <rect width="680" height="410" rx="12" fill="#111827" stroke="#1F2937" stroke-width="1.5"/>
+    
+    <!-- App Header Bar -->
+    <rect width="680" height="46" rx="12" fill="#1E293B"/>
+    <rect y="36" width="680" height="10" fill="#1E293B"/>
+    <circle cx="24" cy="23" r="5" fill="#EF4444"/>
+    <circle cx="42" cy="23" r="5" fill="#F59E0B"/>
+    <circle cx="60" cy="23" r="5" fill="#10B981"/>
+
+    <!-- App Title & Breadcrumbs -->
+    <rect x="90" y="14" width="130" height="18" rx="4" fill="#0D9488" fill-opacity="0.2"/>
+    <text x="100" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#14B8A6">E-BALAMI DARYEELX</text>
+    
+    <rect x="520" y="14" width="136" height="18" rx="9" fill="#10B981" fill-opacity="0.15"/>
+    <circle cx="532" cy="23" r="3.5" fill="#10B981"/>
+    <text x="542" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#34D399">In Development</text>
+
+    <!-- Sidebar Column -->
+    <rect x="18" y="62" width="160" height="332" rx="8" fill="#161F30"/>
+    <rect x="32" y="80" width="80" height="10" rx="3" fill="#64748B"/>
+    
+    <!-- Active Nav Item -->
+    <rect x="26" y="105" width="144" height="32" rx="6" fill="#0D9488" fill-opacity="0.25"/>
+    <circle cx="42" cy="121" r="5" fill="#14B8A6"/>
+    <rect x="56" y="117" width="80" height="8" rx="3" fill="#E2E8F0"/>
+    
+    <!-- Other Nav Items -->
+    <circle cx="42" cy="155" r="5" fill="#475569"/>
+    <rect x="56" y="151" width="70" height="8" rx="3" fill="#475569"/>
+    
+    <circle cx="42" cy="189" r="5" fill="#475569"/>
+    <rect x="56" y="185" width="85" height="8" rx="3" fill="#475569"/>
+    
+    <circle cx="42" cy="223" r="5" fill="#475569"/>
+    <rect x="56" y="219" width="60" height="8" rx="3" fill="#475569"/>
+
+    <!-- Bottom Stat Pill in Sidebar -->
+    <rect x="26" y="325" width="144" height="52" rx="6" fill="#0F172A" stroke="#334155" stroke-opacity="0.5"/>
+    <text x="36" y="345" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Service Access</text>
+    <text x="36" y="364" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#38BDF8">Instant Booking</text>
+
+    <!-- Main Content Area -->
+    <!-- Top KPI Cards -->
+    <g transform="translate(196, 62)">
+      <rect width="145" height="74" rx="8" fill="#161F30" stroke="#1E293B"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Verified Clinics</text>
+      <text x="14" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">24/7</text>
+      <path d="M14 60 L40 54 L70 58 L100 50 L130 52" stroke="#10B981" stroke-width="2" fill="none"/>
+
+      <rect x="157" width="145" height="74" rx="8" fill="#161F30" stroke="#1E293B"/>
+      <text x="171" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Appointment Flow</text>
+      <text x="171" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#38BDF8">Fast &amp; Direct</text>
+      <path d="M171 60 L195 56 L225 58 L260 52 L285 49" stroke="#38BDF8" stroke-width="2" fill="none"/>
+
+      <rect x="314" width="150" height="74" rx="8" fill="url(#tealGrad)" opacity="0.95"/>
+      <text x="328" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">Digital Health Focus</text>
+      <text x="328" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Web &amp; Mobile</text>
+      <text x="328" y="64" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#CCFBF1">Care Connectivity</text>
+    </g>
+
+    <!-- Appointment Schedule Panel -->
+    <g transform="translate(196, 150)">
+      <rect width="464" height="244" rx="8" fill="#161F30" stroke="#1E293B"/>
+      
+      <text x="16" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">Upcoming Healthcare Appointments Mockup</text>
+      
+      <!-- Table Header -->
+      <rect x="16" y="38" width="432" height="26" rx="4" fill="#0F172A"/>
+      <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#64748B">PATIENT / ID</text>
+      <text x="140" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#64748B">DOCTOR / SPECIALTY</text>
+      <text x="280" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#64748B">DATE &amp; TIME</text>
+      <text x="380" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#64748B">STATUS</text>
+
+      <!-- Row 1 -->
+      <rect x="16" y="70" width="432" height="42" rx="4" fill="#111827" fill-opacity="0.6"/>
+      <circle cx="36" cy="91" r="10" fill="#0D9488"/>
+      <text x="32" y="95" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFF">P1</text>
+      <text x="54" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#F1F5F9">Patient #DX-104</text>
+      <text x="54" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">General Consultation</text>
+      <text x="140" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#E2E8F0">Dr. Amina Mohamed</text>
+      <text x="140" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#06B6D4">Internal Medicine</text>
+      <text x="280" y="88" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#CBD5E1">Today, 10:30 AM</text>
+      <rect x="380" y="80" width="56" height="20" rx="10" fill="#10B981" fill-opacity="0.15"/>
+      <text x="390" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#34D399">Confirmed</text>
+
+      <!-- Row 2 -->
+      <rect x="16" y="118" width="432" height="42" rx="4" fill="#111827" fill-opacity="0.3"/>
+      <circle cx="36" cy="139" r="10" fill="#3B82F6"/>
+      <text x="32" y="143" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFF">P2</text>
+      <text x="54" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#F1F5F9">Patient #DX-109</text>
+      <text x="54" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Cardiology Check</text>
+      <text x="140" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#E2E8F0">Dr. Hassan Farah</text>
+      <text x="140" y="148" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#06B6D4">Cardiologist</text>
+      <text x="280" y="136" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#CBD5E1">Tomorrow, 02:00 PM</text>
+      <rect x="380" y="128" width="56" height="20" rx="10" fill="#F59E0B" fill-opacity="0.15"/>
+      <text x="394" y="142" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#FBBF24">Pending</text>
+
+      <!-- Row 3 -->
+      <rect x="16" y="166" width="432" height="42" rx="4" fill="#111827" fill-opacity="0.6"/>
+      <circle cx="36" cy="187" r="10" fill="#8B5CF6"/>
+      <text x="32" y="191" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#FFF">P3</text>
+      <text x="54" y="184" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#F1F5F9">Patient #DX-115</text>
+      <text x="54" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Pediatric Visit</text>
+      <text x="140" y="184" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#E2E8F0">Dr. Zahra Jama</text>
+      <text x="140" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#06B6D4">Pediatrics</text>
+      <text x="280" y="184" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#CBD5E1">Friday, 11:15 AM</text>
+      <rect x="380" y="176" width="56" height="20" rx="10" fill="#10B981" fill-opacity="0.15"/>
+      <text x="390" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#34D399">Confirmed</text>
+
+      <!-- Bottom action button -->
+      <rect x="16" y="214" width="130" height="20" rx="4" fill="#0D9488" fill-opacity="0.3"/>
+      <text x="26" y="228" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#2DD4BF">+ New Appointment</text>
+    </g>
+  </g>
+</svg>

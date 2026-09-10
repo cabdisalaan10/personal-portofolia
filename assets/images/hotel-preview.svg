@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#0C1222"/>
+      <stop offset="100%" stop-color="#050814"/>
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <filter id="glowH" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#bgGradH)"/>
+  <circle cx="700" cy="120" r="130" fill="#3B82F6" opacity="0.15" filter="url(#glowH)"/>
+  <circle cx="100" cy="380" r="110" fill="#F59E0B" opacity="0.12" filter="url(#glowH)"/>
+
+  <!-- Window Container -->
+  <g transform="translate(60, 45)">
+    <rect width="680" height="410" rx="12" fill="#111827" stroke="#1F2937" stroke-width="1.5"/>
+    
+    <!-- App Header Bar -->
+    <rect width="680" height="46" rx="12" fill="#1E293B"/>
+    <rect y="36" width="680" height="10" fill="#1E293B"/>
+    <circle cx="24" cy="23" r="5" fill="#EF4444"/>
+    <circle cx="42" cy="23" r="5" fill="#F59E0B"/>
+    <circle cx="60" cy="23" r="5" fill="#10B981"/>
+
+    <!-- App Title -->
+    <rect x="90" y="14" width="165" height="18" rx="4" fill="#3B82F6" fill-opacity="0.2"/>
+    <text x="100" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#60A5FA">HOTEL MANAGEMENT SYSTEM</text>
+    
+    <rect x="530" y="14" width="126" height="18" rx="9" fill="#F59E0B" fill-opacity="0.15"/>
+    <circle cx="542" cy="23" r="3.5" fill="#F59E0B"/>
+    <text x="552" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#FBBF24">University Project</text>
+
+    <!-- Sidebar Column -->
+    <rect x="18" y="62" width="150" height="332" rx="8" fill="#161F30"/>
+    <rect x="30" y="78" width="70" height="8" rx="3" fill="#64748B"/>
+    
+    <rect x="24" y="100" width="138" height="30" rx="6" fill="#3B82F6" fill-opacity="0.25"/>
+    <text x="40" y="119" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#93C5FD">Dashboard</text>
+    
+    <text x="40" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Rooms &amp; Suites</text>
+    <text x="40" y="184" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Guests &amp; Check-in</text>
+    <text x="40" y="216" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Bookings</text>
+    <text x="40" y="248" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Payments &amp; Bills</text>
+
+    <rect x="24" y="315" width="138" height="65" rx="6" fill="#0F172A" stroke="#334155" stroke-opacity="0.5"/>
+    <text x="34" y="334" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Tech Stack</text>
+    <text x="34" y="352" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">PHP + MySQL</text>
+    <text x="34" y="368" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748B">HTML, CSS, JS</text>
+
+    <!-- Main Content Area -->
+    <g transform="translate(186, 62)">
+      <!-- KPI Row -->
+      <rect width="150" height="70" rx="8" fill="#161F30" stroke="#1E293B"/>
+      <text x="14" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Total Rooms</text>
+      <text x="14" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#F8FAFC">48 / 50</text>
+      <text x="14" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#10B981">96% Occupancy</text>
+
+      <rect x="160" width="150" height="70" rx="8" fill="#161F30" stroke="#1E293B"/>
+      <text x="174" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Active Bookings</text>
+      <text x="174" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#38BDF8">32 Guests</text>
+      <text x="174" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">8 Checkouts Today</text>
+
+      <rect x="320" width="154" height="70" rx="8" fill="#161F30" stroke="#1E293B"/>
+      <text x="334" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" fill="#94A3B8">Payments &amp; Ledger</text>
+      <text x="334" y="48" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#10B981">Verified</text>
+      <text x="334" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748B">Automated Invoicing</text>
+
+      <!-- Room Cards Grid -->
+      <g transform="translate(0, 84)">
+        <rect width="474" height="248" rx="8" fill="#161F30" stroke="#1E293B"/>
+        <text x="16" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#E2E8F0">Room Inventory &amp; Status Matrix</text>
+
+        <!-- Room 101 -->
+        <rect x="16" y="42" width="140" height="92" rx="6" fill="#0F172A" stroke="#334155" stroke-opacity="0.6"/>
+        <text x="28" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">Room 101</text>
+        <rect x="94" y="50" width="52" height="16" rx="8" fill="#10B981" fill-opacity="0.15"/>
+        <text x="102" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700" fill="#34D399">OCCUPIED</text>
+        <text x="28" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Deluxe Suite • King</text>
+        <text x="28" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748B">Guest: Ahmed K.</text>
+        <text x="28" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">$120/night</text>
+
+        <!-- Room 102 -->
+        <rect x="166" y="42" width="140" height="92" rx="6" fill="#0F172A" stroke="#334155" stroke-opacity="0.6"/>
+        <text x="178" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">Room 102</text>
+        <rect x="244" y="50" width="52" height="16" rx="8" fill="#3B82F6" fill-opacity="0.15"/>
+        <text x="252" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700" fill="#60A5FA">AVAILABLE</text>
+        <text x="178" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Standard Double</text>
+        <text x="178" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748B">Cleaned &amp; Ready</text>
+        <text x="178" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">$80/night</text>
+
+        <!-- Room 103 -->
+        <rect x="316" y="42" width="142" height="92" rx="6" fill="#0F172A" stroke="#334155" stroke-opacity="0.6"/>
+        <text x="328" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">Room 103</text>
+        <rect x="396" y="50" width="52" height="16" rx="8" fill="#EF4444" fill-opacity="0.15"/>
+        <text x="404" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8" font-weight="700" fill="#F87171">CLEANING</text>
+        <text x="328" y="82" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#94A3B8">Executive Suite</text>
+        <text x="328" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748B">Housekeeping in prog.</text>
+        <text x="328" y="118" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#38BDF8">$150/night</text>
+
+        <!-- Quick Terminal / Operations Bar -->
+        <g transform="translate(16, 146)">
+          <rect width="442" height="90" rx="6" fill="#0B0F19" stroke="#1E293B"/>
+          <text x="14" y="20" font-family="Consolas, monospace" font-size="10" fill="#64748B">// System Log &amp; Authentication Flow</text>
+          <text x="14" y="38" font-family="Consolas, monospace" font-size="10" fill="#34D399">&gt; [AUTH] Admin session verified via secure PHP session hash</text>
+          <text x="14" y="54" font-family="Consolas, monospace" font-size="10" fill="#38BDF8">&gt; [SQL] SELECT * FROM bookings WHERE status = 'confirmed' LIMIT 10</text>
+          <text x="14" y="70" font-family="Consolas, monospace" font-size="10" fill="#94A3B8">&gt; [PAYMENT] Transaction ID #TX-9821 logged successfully</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
