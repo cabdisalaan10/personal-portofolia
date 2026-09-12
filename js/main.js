@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Abdisalam Faysal Ali - Main Portfolio JavaScript
  * Modern, responsive interactions, theme switching, and data hydration.
  * Domain: abdis.ink
@@ -368,7 +368,7 @@ function initContactForm() {
     }
 
     // Client email helper: open user's default email client
-    const targetEmail = (typeof portfolioData !== 'undefined' && portfolioData.personal?.email) ? portfolioData.personal.email : 'contact@abdis.ink';
+    const targetEmail = (typeof portfolioData !== 'undefined' && portfolioData.personal?.email) ? portfolioData.personal.email : 'hello@abdis.ink';
     const emailSubject = encodeURIComponent(`[${subject}] Message from ${name}`);
     const emailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent via portfolio abdis.ink`);
 
@@ -397,7 +397,7 @@ function initCopyEmail() {
   if (!copyBtn) return;
 
   copyBtn.addEventListener('click', () => {
-    const email = (typeof portfolioData !== 'undefined' && portfolioData.personal?.email) ? portfolioData.personal.email : 'contact@abdis.ink';
+    const email = (typeof portfolioData !== 'undefined' && portfolioData.personal?.email) ? portfolioData.personal.email : 'hello@abdis.ink';
     
     if (navigator.clipboard) {
       navigator.clipboard.writeText(email).then(() => {
@@ -424,3 +424,4 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 }
+

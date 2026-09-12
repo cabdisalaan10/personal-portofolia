@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Abdisalam Faysal Ali - Portfolio Data Configuration
  * Centralized content source for https://abdis.ink
  * Brand Philosophy: "Technology should serve humanity."
@@ -15,13 +15,13 @@ const portfolioData = {
     heroPhilosophy: "Technology should serve humanity.",
     heroDescription: "I build practical digital products and web applications that solve real-world problems. I’m also building DaryeelX, a technology venture focused on creating useful digital solutions.",
     location: "Somalia",
-    email: "contact@abdis.ink",
+    email: "hello@abdis.ink",
     statusBadge: "Available for Projects & Tech Collaboration",
     avatar: "assets/images/abdisalam_dark.png?v=3",
     socials: {
       github: "https://github.com",
       linkedin: "https://linkedin.com",
-      email: "mailto:contact@abdis.ink"
+      email: "mailto:hello@abdis.ink"
     }
   },
 
@@ -196,3 +196,4 @@ const portfolioData = {
 if (typeof Object.freeze === 'function') {
   Object.freeze(portfolioData);
 }
+
