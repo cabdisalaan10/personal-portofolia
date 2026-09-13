@@ -74,7 +74,7 @@ const portfolioData = {
         "Operational Dashboard"
       ],
       image: "assets/images/hotel-preview.svg",
-      githubUrl: "https://github.com",
+      githubUrl: "https://https://github.com/cabdisalaan10",
       liveUrl: ""
     },
     {
@@ -119,12 +119,12 @@ const portfolioData = {
     frontend: {
       category: "Frontend Development",
       icon: "code",
-      items: ["HTML5", "CSS3", "JavaScript (ES6+)"]
+      items: ["HTML5", "CSS3", "JavaScript (ES6+)",]
     },
     backend: {
       category: "Backend Development",
       icon: "server",
-      items: ["PHP"]
+      items: ["PHP","python"]
     },
     database: {
       category: "Database & Storage",
@@ -139,7 +139,7 @@ const portfolioData = {
     learning: {
       category: "Learning / Exploring",
       icon: "compass",
-      items: ["Modern Full-Stack Development", "AI-assisted Software Development"]
+      items: ["Modern Full-Stack Development", "AI-assisted Software Development"," Data analysis"]
     }
   },
 
