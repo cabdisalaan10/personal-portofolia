@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- =======================================================================
        STICKY NAVIGATION HEADER
@@ -46,18 +47,16 @@
       <a href="#home" class="nav-brand" aria-label="Abdisalam Home">
         <img src="assets/icons/logo.svg" alt="Abdisalam Logo" class="brand-logo-icon" width="36" height="36">
         <span>Abdis<span class="brand-dot">.</span></span>
-        <span class="brand-venture-pill" title="Flagship Venture">DaryeelX</span>
       </a>
 
       <!-- Desktop Navigation Menu -->
       <nav class="nav-desktop" aria-label="Main Navigation">
         <ul class="nav-menu">
           <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#daryeelx" class="nav-link">DaryeelX</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#experience" class="nav-link">Experience &amp; Education</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
@@ -76,7 +75,7 @@
           </svg>
         </a>
 
-        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -88,24 +87,23 @@
   </header>
 
   <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+  <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
     <ul class="mobile-menu">
-      <li><a href="#home" class="mobile-link">Home</a></li>
-      <li><a href="#about" class="mobile-link">About</a></li>
-      <li><a href="#projects" class="mobile-link">Projects</a></li>
-      <li><a href="#daryeelx" class="mobile-link" style="color: var(--tech-cyan);">DaryeelX</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#experience" class="mobile-link">Experience</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
+          <li><a href="#home" class="mobile-link">Home</a></li>
+          <li><a href="#projects" class="mobile-link">Projects</a></li>
+          <li><a href="#about" class="mobile-link">About</a></li>
+          <li><a href="#skills" class="mobile-link">Skills</a></li>
+          <li><a href="#experience" class="mobile-link">Experience &amp; Education</a></li>
+          <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
 
-    <div style="padding-top: 24px; border-top: 1px solid var(--border-subtle);">
-      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Direct Reach</div>
-      <a href="mailto:hello@abdis.ink" style="color: var(--coral); font-weight: 600; font-size: 1rem;">hello@abdis.ink</a>
+    <div class="mobile-direct">
+      <p class="mobile-direct-label">Direct Reach</p>
+      <a href="mailto:hello@abdis.ink" class="mobile-direct-email">hello@abdis.ink</a>
     </div>
-  </div>
+  </nav>
 
-  <main id="main-content">
+  <main id="main-content" tabindex="-1">
     <!-- =======================================================================
          HERO SECTION (Matching Reference Design Layout & Brand Colors)
          ======================================================================= -->
@@ -115,35 +113,29 @@
           <!-- Left Column: Copy & Actions -->
           <div class="hero-content">
             <div class="hero-greeting-pill">
-              <span>Hello !</span>
+              <span>Abdisalam Faysal Ali</span>
             </div>
 
             <h1 class="hero-title">
-              I'm Software Developer &amp; <br>
-              <span class="highlight-coral">Technology Builder</span>
+              Building Practical
+              <span class="highlight-coral">Digital Products</span>
             </h1>
 
-            <div class="hero-philosophy-quote">
-              "Technology should serve humanity."
-            </div>
+            <p class="hero-identity">Computer Science Student &amp; Software Developer</p>
 
             <p class="hero-description">
-              I build practical digital products and web applications that solve real-world problems. I’m also building <strong>DaryeelX</strong>, a technology venture focused on creating useful digital solutions.
+              I'm Abdisalam Faysal Ali, a Computer Science student and software developer focused on building useful web and mobile solutions.
             </p>
 
+            <p class="hero-founder">Founder of DaryeelX</p>
+
+            <!-- TODO (Phase 9): Add Resume only when the final PDF exists. -->
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary-coral">
-                <span>View My Projects</span>
+                <span>View My Work</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-
-              <a href="#daryeelx" class="btn btn-secondary-tech">
-                <span>About DaryeelX</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
               </a>
 
@@ -160,7 +152,7 @@
                 </svg>
               </a>
 
-              <a href="www.linkedin.com/in/eng-abdisalan-1475b63b7" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn Profile" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/eng-abdisalan-1475b63b7" target="_blank" rel="noopener noreferrer" class="social-icon-link" title="LinkedIn Profile" aria-label="LinkedIn">
                 <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
@@ -185,7 +177,7 @@
               <div class="portrait-floating-badge">
                 <div>
                   <div class="portrait-badge-title">Abdisalam Faysal Ali</div>
-                  <div class="portrait-badge-subtitle">DaryeelX Founder • Software Builder</div>
+                  <div class="portrait-badge-subtitle">Computer Science Student • Software Developer</div>
                 </div>
                 <div class="status-indicator-dot" title="Available for projects &amp; collaboration"></div>
               </div>
@@ -517,7 +509,7 @@
                 </div>
 
                 <!-- LinkedIn Item -->
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+                <a href="https://www.linkedin.com/in/eng-abdisalan-1475b63b7" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
                   <div class="channel-icon">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -563,7 +555,8 @@
           <div class="contact-form-card">
             <div id="form-feedback" class="form-feedback" role="alert"></div>
 
-            <form id="contact-form" novalidate>
+            <!-- No network submission: dialog method is inert outside a dialog, even without JavaScript. -->
+            <form id="contact-form" method="dialog" aria-describedby="contact-form-note">
               <div class="form-group">
                 <label for="contact-name" class="form-label">Your Name *</label>
                 <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Mohamed Ali" required>
@@ -584,16 +577,17 @@
                 <textarea id="contact-message" name="message" class="form-control" placeholder="Tell me about your project, idea, or inquiry..." required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary-coral" style="width: 100%;">
-                <span>Send Message</span>
+              <button type="button" id="open-email-app" class="btn btn-primary-coral" style="width: 100%;">
+                <span>Open Email App</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
               </button>
 
-              <p class="form-note">
-                🔒 Direct client contact. Prepares a formatted email directly to hello@abdis.ink (or ready for Formspree/Web3Forms integration).
+              <p class="form-note" id="contact-form-note">
+                This opens your email app with a draft addressed to hello@abdis.ink. You must send it there; this website does not send messages. Your text stays here.
+                <noscript>JavaScript is required to prepare the draft. You can email hello@abdis.ink directly.</noscript>
               </p>
             </form>
           </div>
@@ -621,7 +615,7 @@
         <div class="footer-links">
           <a href="https://abdis.ink" class="footer-link">abdis.ink</a>
           <a href="https://github.com/cabdisalaan10" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/eng-abdisalan-1475b63b7" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
       </div>

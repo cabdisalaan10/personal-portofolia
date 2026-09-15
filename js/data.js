@@ -19,8 +19,8 @@ const portfolioData = {
     statusBadge: "Available for Projects & Tech Collaboration",
     avatar: "assets/images/abdisalam_dark.png?v=3",
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "https://github.com/cabdisalaan10",
+      linkedin: "https://www.linkedin.com/in/eng-abdisalan-1475b63b7",
       email: "mailto:hello@abdis.ink"
     }
   },
@@ -74,7 +74,7 @@ const portfolioData = {
         "Operational Dashboard"
       ],
       image: "assets/images/hotel-preview.svg",
-      githubUrl: "https://https://github.com/cabdisalaan10",
+      githubUrl: "", // TODO: Add the verified Hotel Management System repository URL.
       liveUrl: ""
     },
     {
@@ -93,7 +93,8 @@ const portfolioData = {
       ],
       image: "assets/images/daryeelx-preview.svg",
       githubUrl: "",
-      liveUrl: "#daryeelx"
+      liveUrl: "",
+      learnMoreUrl: "#daryeelx" // Product is in development; this is an overview, not a demo.
     },
     {
       id: "personal-portfolio",
@@ -110,7 +111,7 @@ const portfolioData = {
         "DaryeelX Brand Identity"
       ],
       image: "assets/images/portfolio-preview.svg",
-      githubUrl: "https://github.com",
+      githubUrl: "", // TODO: Add the verified Personal Portfolio repository URL.
       liveUrl: "https://abdis.ink"
     }
   ],
