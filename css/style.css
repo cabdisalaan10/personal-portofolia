@@ -1055,7 +1055,7 @@ code, pre {
    ========================================================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 28px;
   margin-bottom: 40px;
 }
@@ -1759,4 +1759,22 @@ textarea.form-control {
   .hero-actions .btn { padding: 12px 18px; }
   .portrait-frame { max-width: 320px; }
   .portrait-floating-badge { left: 12px; right: 12px; bottom: 12px; padding: 12px; }
+}
+
+/* Project case summaries: readable at narrow widths without empty action areas. */
+.project-card { min-width: 0; overflow-wrap: anywhere; }
+.project-meta-row { flex-wrap: wrap; gap: 8px; }
+.project-figure { margin: 0; }
+.project-figure figcaption { padding: 8px 24px; font-size: 0.75rem; color: var(--text-muted); }
+.project-preview img { object-fit: contain; }
+.project-details { display: grid; gap: 14px; margin-bottom: 20px; }
+.project-details dt, .project-stack h4 { font-size: 0.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+.project-details dd { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; }
+.project-stack { margin-bottom: 20px; }
+.project-stack .tech-tags { list-style: none; }
+.project-stack .tech-tag { white-space: normal; }
+.project-links { flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .project-body { padding: 20px; }
+  .project-figure figcaption { padding-inline: 20px; }
 }

@@ -109,71 +109,75 @@ function hydratePortfolioData() {
   renderCurrentlyBuilding(portfolioData.currentlyBuilding);
 }
 
+// Accept explicit HTTPS destinations only; formatting checks do not verify ownership.
+function projectActionUrl(value, kind) {
+  if (typeof value !== 'string' || !value || value !== value.trim()) return '';
+  if (kind === 'internal') {
+    return /^#[a-zA-Z][\w-]*$/.test(value) && document.getElementById(value.slice(1)) ? value : '';
+  }
+  if (!/^https:\/\//i.test(value) || /[\s\\]/.test(value)) return '';
+  try {
+    const url = new URL(value);
+    if (url.username || url.password || /https?:/i.test(url.pathname)) return '';
+    if (kind === 'source' && (url.hostname !== 'github.com'
+      || !/^\/[a-zA-Z0-9-]+\/[a-zA-Z0-9_.-]+\/?$/.test(url.pathname)
+      || url.search || url.hash)) return '';
+    return url.href;
+  } catch {
+    return '';
+  }
+}
+
 function renderProjects(projects) {
   const container = document.getElementById('projects-container');
-  if (!container || !projects) return;
+  if (!container || !Array.isArray(projects)) return;
+  const text = value => typeof value === 'string' ? value.trim() : '';
+  const detail = (label, value) => text(value)
+    ? '<div><dt>' + label + '</dt><dd>' + escapeHtml(text(value)) + '</dd></div>' : '';
+  const stack = (label, values) => {
+    const items = Array.isArray(values) ? values.map(text).filter(Boolean) : [];
+    return items.length ? '<div class="project-stack"><h4>' + label
+      + '</h4><ul class="tech-tags">' + items.map(item => '<li class="tech-tag">'
+      + escapeHtml(item) + '</li>').join('') + '</ul></div>' : '';
+  };
 
   container.innerHTML = projects.map(project => {
-    let badgeClass = 'dev';
-    if (project.statusType === 'live') badgeClass = 'live';
-    if (project.statusType === 'university') badgeClass = 'univ';
-
-    const techTagsHtml = project.technologies.map(t => `<span class="tech-tag">${escapeHtml(t)}</span>`).join('');
-    const featuresHtml = project.features ? project.features.map(f => `<span class="feature-pill">• ${escapeHtml(f)}</span>`).join('') : '';
-
-    const githubBtn = project.githubUrl ? `
-      <a href="${escapeHtml(project.githubUrl)}" target="_blank" rel="noopener noreferrer" class="project-btn" title="View Source Code">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-        </svg>
-        <span>View Source</span>
-      </a>
-    ` : '';
-
-    const destination = project.liveUrl || project.learnMoreUrl;
-    const destinationLabel = project.liveUrl ? 'Live Demo' : 'Learn More';
-    const externalAttributes = destination && !destination.startsWith('#')
-      ? ' target="_blank" rel="noopener noreferrer"' : '';
-    const liveBtn = destination ? `
-      <a href="${escapeHtml(destination)}"${externalAttributes} class="project-btn" title="${destinationLabel}">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        <span>${destinationLabel}</span>
-      </a>
-    ` : '';
-
-    return `
-      <article class="project-card" id="project-${escapeHtml(project.id)}">
-        <div class="project-preview">
-          <img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} preview" loading="lazy">
-        </div>
-        <div class="project-body">
-          <div class="project-meta-row">
-            <span class="category-pill">${escapeHtml(project.category)}</span>
-            <span class="status-badge ${badgeClass}">${escapeHtml(project.status)}</span>
-          </div>
-          <h3 class="project-title">${escapeHtml(project.title)}</h3>
-          <p class="project-description">${escapeHtml(project.description)}</p>
-          ${featuresHtml ? `
-            <div class="project-features">
-              <div class="feature-pill-list">${featuresHtml}</div>
-            </div>
-          ` : ''}
-          <div class="tech-tags" style="margin-bottom: 20px;">
-            ${techTagsHtml}
-          </div>
-          <div class="project-footer">
-            <div class="project-links">
-              ${githubBtn}
-              ${liveBtn}
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
+    if (!project || typeof project !== 'object' || !text(project.title)) return '';
+    const title = escapeHtml(text(project.title));
+    const id = /^[a-z0-9-]+$/.test(text(project.id)) ? ' id="project-' + project.id + '"' : '';
+    const statuses = ['Completed', 'In Development', 'Prototype'];
+    const status = statuses.includes(project.status) ? project.status : '';
+    const badge = status ? '<span class="status-badge ' + (status === 'Completed' ? 'live' : 'dev')
+      + '">' + status + '</span>' : '';
+    const category = text(project.category) ? '<span class="category-pill">'
+      + escapeHtml(project.category) + '</span>' : '';
+    const imagePath = text(project.image);
+    const validImage = /^assets\/images\/[a-zA-Z0-9_-]+\.(svg|png|jpe?g|webp)$/.test(imagePath);
+    const dimensions = Number.isInteger(project.imageWidth) && project.imageWidth > 0
+      && Number.isInteger(project.imageHeight) && project.imageHeight > 0
+      ? ' width="' + project.imageWidth + '" height="' + project.imageHeight + '"' : '';
+    const image = validImage ? '<figure class="project-figure"><div class="project-preview"><img src="'
+      + escapeHtml(imagePath) + '" alt="' + escapeHtml(text(project.imageAlt) || project.title + ' illustration')
+      + '"' + dimensions + ' loading="lazy" decoding="async"></div><figcaption>Project illustration</figcaption></figure>' : '';
+    const actions = [
+      ['View Source', project.githubUrl, 'source'],
+      ['Live Demo', project.liveUrl, 'live'],
+      ['Learn More', project.learnMoreUrl, 'internal']
+    ].map(([label, value, kind]) => {
+      const url = projectActionUrl(value, kind);
+      return url ? '<a class="project-btn" href="' + escapeHtml(url) + '"'
+        + (kind === 'internal' ? '' : ' target="_blank" rel="noopener noreferrer"')
+        + ' aria-label="' + label + ': ' + title + '">' + label + '</a>' : '';
+    }).filter(Boolean).join('');
+    const details = detail('Problem', project.problem) + detail('Solution', project.description)
+      + detail('My contribution', project.contribution);
+    return '<article class="project-card"' + id + '>' + image + '<div class="project-body">'
+      + (category || badge ? '<div class="project-meta-row">' + category + badge + '</div>' : '')
+      + '<h3 class="project-title">' + title + '</h3>'
+      + (details ? '<dl class="project-details">' + details + '</dl>' : '')
+      + stack('Technologies', project.technologies) + stack('Planned Stack', project.plannedTechnologies)
+      + (actions ? '<div class="project-footer"><div class="project-links">' + actions + '</div></div>' : '')
+      + '</div></article>';
   }).join('');
 }
 

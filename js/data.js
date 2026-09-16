@@ -56,63 +56,69 @@ const portfolioData = {
     }
   },
 
+  // TODO: Add verified project repository URLs when supplied. No source buttons until then.
+  // Portfolio remains in development while the staged improvements are underway.
   projects: [
     {
-      id: "hotel-management",
-      title: "Hotel Management System",
-      category: "Full-Stack Web System",
-      status: "University Project",
-      statusType: "university",
-      description: "A web-based hotel management system designed to manage rooms, guests, bookings, payments, and hotel operations.",
-      technologies: ["PHP", "SQL", "MySQL", "HTML", "CSS", "JavaScript"],
-      features: [
-        "Room Management",
-        "Guest Management",
-        "Booking Management",
-        "Payments & Ledger",
-        "Secure Authentication",
-        "Operational Dashboard"
+      "id": "hotel-management",
+      "title": "Hotel Management System",
+      "category": "University Project",
+      "problem": "Managing hotel bookings, guests, rooms and related operations manually can make information difficult to track.",
+      "description": "A web-based system designed to organize rooms, guests, bookings, payments and hotel operations through a centralized interface.",
+      "contribution": "Developing the university system, including guest booking states, room status transitions and PHP/SQL administrative dashboards.",
+      "technologies": [
+        "PHP",
+        "SQL"
       ],
-      image: "assets/images/hotel-preview.svg",
-      githubUrl: "", // TODO: Add the verified Hotel Management System repository URL.
-      liveUrl: ""
+      "status": "In Development",
+      "image": "assets/images/hotel-preview.svg",
+      "imageAlt": "Illustration of a hotel management dashboard",
+      "githubUrl": "",
+      "liveUrl": "",
+      "imageWidth": 800,
+      "imageHeight": 500
     },
     {
-      id: "ebalami-daryeelx",
-      title: "DaryeelX / E-Balami",
-      category: "Health Technology",
-      status: "In Development",
-      statusType: "development",
-      description: "A digital healthcare booking concept designed to make it easier for patients to connect with healthcare services and book appointments seamlessly.",
-      technologies: ["Web Application", "Mobile Application", "Digital Health", "PHP/SQL Backend"],
-      features: [
-        "Doctor & Clinic Directory",
-        "Instant Slot Booking",
-        "Patient Records Overview",
-        "Status Notifications"
+      "id": "ebalami-daryeelx",
+      "title": "E-Balami DaryeelX",
+      "category": "Health Technology / Product",
+      "problem": "Patients may face difficulty discovering healthcare providers and arranging appointments efficiently.",
+      "description": "A product intended to help patients discover healthcare providers and manage appointment bookings digitally.",
+      "contribution": "As founder, developing the product concept, user journey prototypes and system specifications.",
+      "plannedTechnologies": [
+        "React (Web)",
+        "React Native (Mobile)",
+        "Laravel / PHP (Backend)",
+        "MySQL (Database)"
       ],
-      image: "assets/images/daryeelx-preview.svg",
-      githubUrl: "",
-      liveUrl: "",
-      learnMoreUrl: "#daryeelx" // Product is in development; this is an overview, not a demo.
+      "status": "In Development",
+      "image": "assets/images/daryeelx-preview.svg",
+      "imageAlt": "Concept illustration of a healthcare appointment interface",
+      "githubUrl": "",
+      "liveUrl": "",
+      "learnMoreUrl": "#daryeelx",
+      "imageWidth": 800,
+      "imageHeight": 500
     },
     {
-      id: "personal-portfolio",
-      title: "Personal Portfolio",
-      category: "Modern Web Architecture",
-      status: "Live Production",
-      statusType: "live",
-      description: "My personal developer portfolio at abdis.ink engineered with semantic HTML5, vanilla CSS design system, responsive layout, dark/light theme storage, and fast performance.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "SEO"],
-      features: [
-        "Light & Dark Theme Persistence",
-        "Centralized Data Configuration",
-        "Zero Framework Bloat",
-        "DaryeelX Brand Identity"
+      "id": "personal-portfolio",
+      "title": "Personal Portfolio",
+      "category": "Personal Project",
+      "problem": "Project work and professional background need a clear, accessible place to be presented together.",
+      "description": "The website you are viewing: a personal portfolio presenting my projects, skills and background.",
+      "contribution": "Building the HTML, CSS and JavaScript website, including project cards, responsive layouts and light/dark themes.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
       ],
-      image: "assets/images/portfolio-preview.svg",
-      githubUrl: "", // TODO: Add the verified Personal Portfolio repository URL.
-      liveUrl: "https://abdis.ink"
+      "status": "In Development",
+      "image": "assets/images/portfolio-preview.svg",
+      "imageAlt": "Illustration representing the personal portfolio website",
+      "githubUrl": "",
+      "liveUrl": "",
+      "imageWidth": 800,
+      "imageHeight": 500
     }
   ],
 
