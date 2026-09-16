@@ -1778,3 +1778,20 @@ textarea.form-control {
   .project-body { padding: 20px; }
   .project-figure figcaption { padding-inline: 20px; }
 }
+
+/* Concise personal background and venture context. */
+.about-summary, .featured-venture { max-width: 780px; margin-inline: auto; }
+.about-summary { display: grid; gap: 18px; }
+.featured-venture { padding: 28px; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--bg-card); }
+.featured-venture p + p { margin-top: 12px; }
+.venture-role { font-weight: 600; color: var(--text-primary); }
+.venture-product-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 24px 0 12px; }
+.venture-product-summary h3 { font-size: 1.2rem; }
+.skill-items-wrap { list-style: none; }
+.skill-category-card, .timeline-card { min-width: 0; overflow-wrap: anywhere; }
+.skill-chip { white-space: normal; }
+@media (max-width: 480px) {
+  .featured-venture { padding: 20px; }
+  .skills-grid, .experience-edu-grid { grid-template-columns: minmax(0, 1fr); }
+  .timeline-top { flex-wrap: wrap; gap: 12px; }
+}

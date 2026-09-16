@@ -25,37 +25,7 @@ const portfolioData = {
     }
   },
 
-  about: {
-    lead: "I’m Abdisalam, an IT student and software developer focused on building practical technology solutions.",
-    body: "I enjoy turning ideas into usable digital products and continuously improving my skills in software development, databases, web technologies, and modern development tools. My long-term goal is to build impactful technology products and grow DaryeelX into a strong technology brand under the philosophy that technology must genuinely serve humanity.",
-    stats: [
-      { label: "Core Venture", value: "DaryeelX" },
-      { label: "University", value: "Golis University" },
-      { label: "Graduation", value: "Class of 2026" },
-      { label: "Core Focus", value: "Software & Digital Health" }
-    ]
-  },
-
-  daryeelx: {
-    brand: "DaryeelX IT Solutions",
-    badge: "Main Technology Venture",
-    tagline: "Technology should serve humanity.",
-    description: "DaryeelX is a technology venture I’m developing to create practical digital products that solve real problems. We bridge the gap between modern technology innovation and human-centric care, starting with focused digital health solutions and expanding over time.",
-    flagshipProduct: {
-      name: "E-Balami DaryeelX",
-      category: "Health Technology",
-      badge: "In Development / Building",
-      description: "A digital healthcare booking concept designed to make it easier for patients to connect with healthcare services and book appointments without friction.",
-      technologies: ["Web Application", "Mobile Application", "Digital Health", "UI/UX Design"],
-      image: "assets/images/daryeelx-preview.svg",
-      highlights: [
-        "Seamless patient-to-clinic appointment scheduling",
-        "Reduces clinic waiting room congestion & friction",
-        "Human-centric, accessible user experience"
-      ]
-    }
-  },
-
+  // About and Featured Venture copy live in index.html.
   // TODO: Add verified project repository URLs when supplied. No source buttons until then.
   // Portfolio remains in development while the staged improvements are underway.
   projects: [
@@ -73,14 +43,14 @@ const portfolioData = {
       "status": "In Development",
       "image": "assets/images/hotel-preview.svg",
       "imageAlt": "Illustration of a hotel management dashboard",
-      "githubUrl": "",
+      "githubUrl": "https://github.com/cabdisalaan10/university-project",
       "liveUrl": "",
       "imageWidth": 800,
       "imageHeight": 500
     },
     {
-      "id": "ebalami-daryeelx",
-      "title": "E-Balami DaryeelX",
+      "id": "eballan-daryeelx",
+      "title": "eBallan DaryeelX",
       "category": "Health Technology / Product",
       "problem": "Patients may face difficulty discovering healthcare providers and arranging appointments efficiently.",
       "description": "A product intended to help patients discover healthcare providers and manage appointment bookings digitally.",
@@ -123,73 +93,98 @@ const portfolioData = {
   ],
 
   skills: {
-    frontend: {
-      category: "Frontend Development",
-      icon: "code",
-      items: ["HTML5", "CSS3", "JavaScript (ES6+)",]
+    "frontend": {
+      "category": "Frontend — Current Projects",
+      "icon": "code",
+      "items": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
     },
-    backend: {
-      category: "Backend Development",
-      icon: "server",
-      items: ["PHP","python"]
+    "backend": {
+      "category": "Backend — Current Projects",
+      "icon": "server",
+      "items": [
+        "PHP"
+      ]
     },
-    database: {
-      category: "Database & Storage",
-      icon: "database",
-      items: ["SQL", "MySQL"]
+    "database": {
+      "category": "Database — Current Projects",
+      "icon": "database",
+      "items": [
+        "SQL"
+      ]
     },
-    tools: {
-      category: "Tools & Workflow",
-      icon: "tool",
-      items: ["Git", "GitHub", "VS Code"]
+    "tools": {
+      "category": "Tools & Workflow",
+      "icon": "tool",
+      "items": [
+        "Git",
+        "GitHub",
+        "VS Code"
+      ]
     },
-    learning: {
-      category: "Learning / Exploring",
-      icon: "compass",
-      items: ["Modern Full-Stack Development", "AI-assisted Software Development"," Data analysis"]
+    "planned": {
+      "category": "Planned for eBallan",
+      "icon": "compass",
+      "items": [
+        "React (Web)",
+        "React Native (Mobile)",
+        "Laravel / PHP (Backend)",
+        "MySQL (Database)"
+      ]
+    },
+    "exploring": {
+      "category": "Learning / Exploring",
+      "icon": "compass",
+      "items": [
+        "Python",
+        "Data analysis",
+        "AI-assisted software development"
+      ]
     }
   },
 
   experience: [
     {
-      role: "Founder / Technology Builder",
-      organization: "DaryeelX IT Solutions",
-      badge: "Flagship Venture",
-      period: "2024 – Present",
-      description: "Working on digital product ideas and technology solutions under the DaryeelX brand. Leading product conceptualization, human-centric design, and development for platforms like E-Balami.",
-      bullets: [
-        "Executing the core philosophy: Technology should serve humanity",
-        "Designing architecture for web and mobile healthtech interfaces",
-        "Building digital systems that elevate healthcare accessibility and operations"
+      "role": "Founder",
+      "organization": "DaryeelX",
+      "badge": "Founder Work",
+      "period": "2024 – Present",
+      "description": "Shaping practical digital product concepts and planning eBallan DaryeelX, a healthcare product in development.",
+      "bullets": [
+        "Defining product requirements and system specifications.",
+        "Developing user journey prototypes for healthcare discovery and appointment booking."
       ]
     }
   ],
 
   education: [
     {
-      degree: "Information Technology / Computer Science Degree",
-      institution: "Golis University",
-      period: "2023 – 2026",
-      status: "In Progress",
-      description: "Rigorous study in core computing disciplines including programming paradigms, relational database systems, algorithms, web technologies, and systems engineering."
+      "degree": "Computer Science",
+      "institution": "Golis University",
+      "period": "2023 – 2026",
+      "status": "In Progress",
+      "description": "Computer Science student developing practical software skills through academic projects."
     }
   ],
 
   currentlyBuilding: [
     {
-      title: "Completing Hotel Management System",
+      title: "Developing Hotel Management System",
       badge: "University System",
-      description: "Polishing guest booking states, automated receipt generation, room status transitions, and role-based administrative dashboards in PHP & MySQL."
+      description: "Developing the university project with PHP and SQL, focusing on guest bookings, room status and administrative dashboards."
     },
     {
-      title: "Building DaryeelX Products (E-Balami)",
-      badge: "Venture Flagship",
+      title: "Building DaryeelX Products (eBallan)",
+      badge: "Founder Work",
       description: "Advancing user journey prototypes and system specifications for the healthcare appointment scheduling system to improve local healthcare accessibility."
     },
     {
       title: "Strengthening Full-Stack Skills",
       badge: "Technical Growth",
-      description: "Deepening knowledge of scalable modern full-stack workflows, REST API conventions, responsive UI standards, and AI-assisted development tools."
+      description: "Continuing to learn web development, databases and modern development tools through practical projects."
     }
   ],
 

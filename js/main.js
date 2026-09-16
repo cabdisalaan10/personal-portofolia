@@ -197,9 +197,9 @@ function renderSkills(skills) {
     const group = skills[key];
     const iconSvg = iconSvgMap[group.icon] || iconSvgMap.code;
     const chipsHtml = group.items.map(item => `
-      <div class="skill-chip">
+      <li class="skill-chip">
         <span>${escapeHtml(item)}</span>
-      </div>
+      </li>
     `).join('');
 
     return `
@@ -208,9 +208,9 @@ function renderSkills(skills) {
           <div class="skill-cat-icon">${iconSvg}</div>
           <h3 class="skill-cat-title">${escapeHtml(group.category)}</h3>
         </div>
-        <div class="skill-items-wrap">
+        <ul class="skill-items-wrap">
           ${chipsHtml}
-        </div>
+        </ul>
       </div>
     `;
   }).join('');
