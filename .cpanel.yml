@@ -2,6 +2,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/abdiswyi/public_html/
+    - export PRIVATEPATH=/home/abdiswyi/abdis-private/
+    - /usr/bin/test -f vendor/autoload.php
+    - /bin/mkdir -p $PRIVATEPATH/config $PRIVATEPATH/lib $PRIVATEPATH/vendor
+    - /bin/cp -R vendor/. $PRIVATEPATH/vendor/
+    - /bin/cp lib/contact.php $PRIVATEPATH/lib/contact.php
+    - /bin/cp config/mail.example.php $PRIVATEPATH/config/mail.example.php
+    - /bin/chmod 700 $PRIVATEPATH $PRIVATEPATH/config
+    - /bin/cp contact.php $DEPLOYPATH/contact.php
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -R css $DEPLOYPATH
     - /bin/cp -R js $DEPLOYPATH

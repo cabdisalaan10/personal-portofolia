@@ -436,32 +436,33 @@
 
           <!-- Right: Contact Form -->
           <div class="contact-form-card">
-            <div id="form-feedback" class="form-feedback" role="alert"></div>
+            <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" aria-atomic="true"></div>
 
-            <!-- No network submission: dialog method is inert outside a dialog, even without JavaScript. -->
-            <form id="contact-form" method="dialog" aria-describedby="contact-form-note">
+            <!-- Native POST also works when JavaScript is unavailable. -->
+            <form id="contact-form" method="post" action="contact.php" aria-describedby="contact-form-note">
               <div class="form-group">
                 <label for="contact-name" class="form-label">Your Name *</label>
-                <input type="text" id="contact-name" name="name" class="form-control" placeholder="e.g. Mohamed Ali" required>
+                <input type="text" id="contact-name" name="name" maxlength="100" autocomplete="name" class="form-control" placeholder="e.g. Mohamed Ali" required>
               </div>
 
               <div class="form-group">
                 <label for="contact-email" class="form-label">Email Address *</label>
-                <input type="email" id="contact-email" name="email" class="form-control" placeholder="e.g. mohamed@example.com" required>
+                <input type="email" id="contact-email" name="email" maxlength="254" autocomplete="email" class="form-control" placeholder="e.g. mohamed@example.com" required>
               </div>
 
               <div class="form-group">
-                <label for="contact-subject" class="form-label">Subject</label>
-                <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="e.g. Collaboration on DaryeelX">
+                <label for="contact-subject" class="form-label">Subject *</label>
+                <input type="text" id="contact-subject" name="subject" maxlength="150" required class="form-control" placeholder="e.g. Collaboration on DaryeelX">
               </div>
 
               <div class="form-group">
                 <label for="contact-message" class="form-label">Message *</label>
-                <textarea id="contact-message" name="message" class="form-control" placeholder="Tell me about your project, idea, or inquiry..." required></textarea>
+                <textarea id="contact-message" name="message" maxlength="5000" class="form-control" placeholder="Tell me about your project, idea, or inquiry..." required></textarea>
               </div>
 
-              <button type="button" id="open-email-app" class="btn btn-primary-coral" style="width: 100%;">
-                <span>Open Email App</span>
+              <div class="contact-honeypot" hidden aria-hidden="true"><label for="contact-website">Leave this field empty</label><input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+              <button type="submit" id="send-message" class="btn btn-primary-coral contact-submit">
+                <span>Send Message</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="22" y1="2" x2="11" y2="13"></line>
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -469,8 +470,8 @@
               </button>
 
               <p class="form-note" id="contact-form-note">
-                This opens your email app with a draft addressed to hello@abdis.ink. You must send it there; this website does not send messages. Your text stays here.
-                <noscript>JavaScript is required to prepare the draft. You can email hello@abdis.ink directly.</noscript>
+                Your message will be sent to hello@abdis.ink. If sending fails, your text stays in the form.
+                <noscript>Submitting opens a confirmation page. If it fails, use your browser’s Back button to return to your draft.</noscript>
               </p>
             </form>
           </div>

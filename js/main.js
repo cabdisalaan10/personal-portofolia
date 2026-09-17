@@ -385,41 +385,58 @@ function initScrollSpy() {
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const feedback = document.getElementById('form-feedback');
-  if (!form || !feedback) return;
+  const button = document.getElementById('send-message');
+  if (!form || !feedback || !button) return;
+  let pending = false;
 
-  // Prevent implicit submission; the button explicitly prepares a local email draft.
-  form.addEventListener('submit', event => event.preventDefault());
-  const openEmailButton = document.getElementById('open-email-app');
-  if (!openEmailButton) return;
-
-  openEmailButton.addEventListener('click', () => {
-    if (!form.reportValidity()) return;
-
-    const name = form.elements['name']?.value.trim();
-    const email = form.elements['email']?.value.trim();
-    const subject = form.elements['subject']?.value.trim() || 'Portfolio Contact from abdis.ink';
-    const message = form.elements['message']?.value.trim();
-
-    if (!name || !email || !message) {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (pending || !form.reportValidity()) return;
+    const fields = ['name', 'email', 'subject', 'message'];
+    if (fields.some(key => !form.elements[key].value.trim())) {
       showFeedback('Please fill out all required fields.', 'error');
       return;
     }
-
-    // Client email helper: open user's default email client
-    const targetEmail = (typeof portfolioData !== 'undefined' && portfolioData.personal?.email) ? portfolioData.personal.email : 'hello@abdis.ink';
-    const emailSubject = encodeURIComponent(`[${subject}] Message from ${name}`);
-    const emailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nSent via portfolio abdis.ink`);
-
-    showFeedback('Draft prepared for your email app. Send it there to deliver your message. If no app opens, copy your text and email hello@abdis.ink directly.', 'success');
-    window.location.href = `mailto:${targetEmail}?subject=${emailSubject}&body=${emailBody}`;
+    pending = true;
+    const label = button.querySelector('span');
+    button.disabled = true;
+    form.setAttribute('aria-busy', 'true');
+    label.textContent = 'Sending...';
+    showFeedback('Sending...', 'pending');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 45000);
+    // Snapshot the draft. Edits made during delivery must not be erased.
+    const payload = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: payload,
+        signal: controller.signal
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        showFeedback(response.status === 429
+          ? 'Too many attempts. Please wait 10 minutes before trying again.'
+          : 'Unable to send your message right now. Your text has been kept. Please try again later.', 'error');
+        return;
+      }
+      if (fields.every(key => form.elements[key].value === payload.get(key))) form.reset();
+      showFeedback('Your message has been sent successfully.', 'success');
+    } catch {
+      showFeedback('Delivery could not be confirmed. Your text has been kept. Please wait before retrying to avoid a duplicate message.', 'error');
+    } finally {
+      clearTimeout(timeout);
+      pending = false;
+      button.disabled = false;
+      form.removeAttribute('aria-busy');
+      label.textContent = 'Send Message';
+    }
   });
 
-  function showFeedback(msg, type) {
-    feedback.textContent = msg;
-    feedback.className = `form-feedback ${type}`;
-    setTimeout(() => {
-      feedback.className = 'form-feedback';
-    }, 6000);
+  function showFeedback(message, type) {
+    feedback.textContent = message;
+    feedback.className = 'form-feedback ' + type;
   }
 }
 

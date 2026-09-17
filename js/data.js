@@ -191,7 +191,7 @@ const portfolioData = {
   contact: {
     heading: "Let’s Connect",
     subheading: "Whether you want to discuss technology, software development, collaboration, or an interesting idea, feel free to reach out.",
-    formNote: "Messages send directly via your preferred email client, or connect through LinkedIn & GitHub."
+    formNote: "Send a message through the contact form, or connect through LinkedIn and GitHub."
   }
 };
 
