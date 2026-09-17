@@ -29,10 +29,19 @@ function allowContactAttempt(string $path, string $ip, int $now): bool
     try {
         if (!flock($handle, LOCK_EX)) throw new RuntimeException('rate-lock');
         $raw = stream_get_contents($handle);
-        $state = $raw === '' ? [] : json_decode($raw, true, 512, JSON_THROW_ON_ERROR);
-        if (!is_array($state)) throw new RuntimeException('rate-state');
+        $state = [];
+        if ($raw !== false && $raw !== '') {
+            $decoded = json_decode($raw, true);
+            if (is_array($decoded)) {
+                $state = $decoded;
+            }
+        }
         foreach ($state as $key => $attempts) {
-            $state[$key] = array_values(array_filter($attempts, fn($time) => $time > $now - 600));
+            if (!is_array($attempts)) {
+                unset($state[$key]);
+                continue;
+            }
+            $state[$key] = array_values(array_filter($attempts, fn($time) => is_int($time) && $time > $now - 600));
             if (!$state[$key]) unset($state[$key]);
         }
         $key = hash('sha256', $ip);
@@ -58,8 +67,9 @@ function contactMailer(array $config, array $input): \PHPMailer\PHPMailer\PHPMai
     foreach (['host', 'username', 'password', 'from_email', 'from_name', 'recipient', 'encryption'] as $key) {
         if (!isset($config[$key]) || !is_string($config[$key]) || $config[$key] === '') throw new RuntimeException('mail-config');
     }
+    $port = is_int($config['port'] ?? null) ? $config['port'] : (is_string($config['port'] ?? null) && ctype_digit($config['port']) ? (int)$config['port'] : 0);
     if (!in_array($config['encryption'], ['tls', 'ssl'], true)
-        || !is_int($config['port'] ?? null) || $config['port'] < 1 || $config['port'] > 65535
+        || $port < 1 || $port > 65535
         || !filter_var($config['from_email'], FILTER_VALIDATE_EMAIL)
         || !filter_var($config['recipient'], FILTER_VALIDATE_EMAIL)
         || !preg_match('/^[^@]+@abdis\.ink$/i', $config['from_email'])

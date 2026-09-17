@@ -2,3 +2,7 @@
 /config/mail.*.local.php
 /.contact-test-runtime/
 /.composer-cache/
+.env
+.env.*
+rate-limits.json
+

@@ -31,13 +31,14 @@ try {
     $private = dirname(__DIR__) . '/abdis-private';
     $library = is_file($private . '/lib/contact.php') ? $private : __DIR__;
     require $library . '/lib/contact.php';
-    $ratePath = sys_get_temp_dir() . '/abdis-contact-' . hash('sha256', __DIR__) . '.json';
+    $input = validateContact($_POST);
+    if ($input === null) contactResponse(422, false, 'Please check all required fields and their length limits.');
+    $rateDir = is_dir($private) && is_writable($private) ? $private : sys_get_temp_dir();
+    $ratePath = $rateDir . '/abdis-contact-' . hash('sha256', __DIR__) . '.json';
     if (!allowContactAttempt($ratePath, $_SERVER['REMOTE_ADDR'] ?? 'unknown', time())) {
         header('Retry-After: 600');
         contactResponse(429, false, 'Too many attempts. Please wait 10 minutes before trying again.');
     }
-    $input = validateContact($_POST);
-    if ($input === null) contactResponse(422, false, 'Please check all required fields and their length limits.');
     $configPath = getenv('ABDIS_MAIL_CONFIG') ?: (is_file($private . '/config/mail.php') ? $private . '/config/mail.php' : __DIR__ . '/config/mail.php');
     if (!is_file($configPath) || !is_file($library . '/vendor/autoload.php')) throw new RuntimeException('mail-setup');
     $config = require $configPath;

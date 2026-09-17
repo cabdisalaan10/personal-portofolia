@@ -33,7 +33,7 @@ if (is_file(__DIR__ . '/../vendor/autoload.php')) {
     $config = ['host' => '127.0.0.1', 'username' => 'hello@abdis.ink', 'password' => 'dummy-test-only', 'port' => 1, 'encryption' => 'tls', 'from_email' => 'hello@abdis.ink', 'from_name' => 'abdis.ink', 'recipient' => 'hello@abdis.ink'];
     $mail = contactMailer($config, $valid);
     check($mail->From === 'hello@abdis.ink', 'domain From');
-    check(isset($mail->getReplyToAddresses()['visitor@example.org']), 'visitor Reply-To');
+    check(($mail->getReplyToAddresses()[0][0] ?? '') === 'visitor@example.org', 'visitor Reply-To');
     check($mail->preSend(), 'message composition (no delivery)');
     $mail->Timeout = 1;
     try { $mail->send(); check(false, 'SMTP failure expected'); }
