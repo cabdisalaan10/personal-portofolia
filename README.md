@@ -9,8 +9,8 @@ Centering Abdisalam's identity as a **Software Developer, Technology Builder, an
 ## 🌟 Key Features
 
 - **Personal Brand First**: Professional presentation tailored for recruiters, universities, scholarship committees, and technical partners.
-- **DaryeelX Venture Showcase**: Dedicated spotlight for DaryeelX and its flagship healthcare booking concept, **eBallan**.
-- **Real-World Projects**: Detailed cards for the **Hotel Management System** (PHP & MySQL), **DaryeelX / eBallan**, and the **Personal Portfolio**.
+- **DaryeelX Venture Showcase**: Dedicated spotlight for DaryeelX and its flagship healthcare booking concept, **eBallan DaryeelX**.
+- **Real-World Projects**: Detailed cards for the **Hotel Management System** (PHP & MySQL), **eBallan DaryeelX**, and the **Personal Portfolio**.
 - **Dark-First Modern Aesthetics**: Sophisticated dark theme by default with an instant Dark/Light mode toggle stored in `localStorage`.
 - **Centralized Data Configuration (`js/data.js`)**: Update personal details, bio, education degree title, projects, and skills in one clean configuration file.
 - **Zero Framework Bloat**: Pure vanilla HTML5, CSS3 (custom properties), and ES6+ JavaScript. Fast loading and zero dependency vulnerability risk.
@@ -36,10 +36,12 @@ personal-portfolio/
     ├── icons/
     │   └── favicon.svg          # Portfolio monogram favicon
     └── images/
-        ├── abdisalam.png        # Official portrait of Abdisalam
-        ├── daryeelx-preview.svg # eBallan healthtech concept UI mockup
-        ├── hotel-preview.svg    # Hotel Management System UI mockup
-        └── portfolio-preview.svg# Developer portfolio architecture mockup
+        ├── abdisalam_original.webp # Optimized WebP hero portrait
+        ├── abdisalam_original.png  # High-resolution PNG hero fallback
+        ├── abdisalam.png           # Social preview portrait
+        ├── daryeelx-preview.svg    # eBallan DaryeelX healthtech concept UI mockup
+        ├── hotel-preview.svg       # Hotel Management System UI mockup
+        └── portfolio-preview.svg   # Developer portfolio architecture mockup
 ```
 
 ---

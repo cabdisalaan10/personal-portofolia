@@ -145,9 +145,9 @@ function renderProjects(projects) {
     if (!project || typeof project !== 'object' || !text(project.title)) return '';
     const title = escapeHtml(text(project.title));
     const id = /^[a-z0-9-]+$/.test(text(project.id)) ? ' id="project-' + project.id + '"' : '';
-    const statuses = ['Completed', 'In Development', 'Prototype'];
+    const statuses = ['Live', 'Completed', 'In Development', 'Prototype'];
     const status = statuses.includes(project.status) ? project.status : '';
-    const badge = status ? '<span class="status-badge ' + (status === 'Completed' ? 'live' : 'dev')
+    const badge = status ? '<span class="status-badge ' + (status === 'Live' || status === 'Completed' ? 'live' : 'dev')
       + '">' + status + '</span>' : '';
     const category = text(project.category) ? '<span class="category-pill">'
       + escapeHtml(project.category) + '</span>' : '';

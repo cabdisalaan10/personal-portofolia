@@ -57,7 +57,7 @@ const portfolioData = {
       "contribution": "As founder, developing the product concept, user journey prototypes and system specifications.",
       "plannedTechnologies": [
         "React (Web)",
-        "React Native (Mobile)",
+        "Flutter (Mobile)",
         "Laravel / PHP (Backend)",
         "MySQL (Database)"
       ],
@@ -82,7 +82,7 @@ const portfolioData = {
         "CSS",
         "JavaScript"
       ],
-      "status": "In Development",
+      "status": "Live",
       "image": "assets/images/portfolio-preview.svg",
       "imageAlt": "Illustration representing the personal portfolio website",
       "githubUrl": "",
@@ -123,8 +123,7 @@ const portfolioData = {
         "Git",
         "GitHub",
         "VS Code",
-        "codex",
-        "antigravity"
+        "Excel"
       ]
     },
     "planned": {
@@ -142,7 +141,7 @@ const portfolioData = {
       "icon": "compass",
       "items": [
         "Python",
-        "Data analysis",
+        "Data Analysis",
         "AI-assisted software development"
       ]
     }
