@@ -34,6 +34,11 @@
   <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
   <meta name="theme-color" content="#0B0F19">
 
+  <!-- Google Fonts: preconnect for performance, then stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -217,7 +222,10 @@
           <div class="hero-portrait-container">
             <div class="portrait-glow-circle"></div>
             <div class="portrait-frame">
-              <img src="assets/images/abdisalam_original.png" alt="Abdisalam Faysal Ali" class="portrait-img">
+              <picture>
+                <source srcset="assets/images/abdisalam_original.webp" type="image/webp">
+                <img src="assets/images/abdisalam_original.png" alt="Abdisalam Faysal Ali" class="portrait-img" width="1024" height="1024" fetchpriority="high" decoding="async">
+              </picture>
               <div class="portrait-floating-badge">
                 <div>
                   <div class="portrait-badge-title">Abdisalam Faysal Ali</div>
@@ -532,7 +540,7 @@
       <div class="footer-top">
         <div>
           <div class="footer-brand" style="display: inline-flex; align-items: center; gap: 8px;">
-              <img src="assets/icons/logo.svg" alt="Abdisalam Logo" class="brand-logo-icon" width="28" height="28">
+              <img src="assets/icons/logo.svg" alt="Abdisalam Logo" class="brand-logo-icon" width="28" height="28" decoding="async">
               <span>Abdis<span style="color: var(--coral);">.</span></span>
             </div>
           <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 4px;">

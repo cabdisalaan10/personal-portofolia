@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Abdisalam Faysal Ali - Main Portfolio JavaScript
  * Modern, responsive interactions, theme switching, and data hydration.
  * Domain: abdis.ink
@@ -339,7 +339,8 @@ function initNavigation() {
   const backToTopBtn = document.getElementById('back-to-top');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' });
     });
   }
 }
