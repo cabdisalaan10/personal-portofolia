@@ -122,7 +122,9 @@ const portfolioData = {
       "items": [
         "Git",
         "GitHub",
-        "VS Code"
+        "VS Code",
+        "codex",
+        "antigravity"
       ]
     },
     "planned": {
