@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
@@ -144,20 +144,22 @@
 
   <main id="main-content" tabindex="-1">
     <!-- =======================================================================
-         HERO SECTION (Matching Reference Design Layout & Brand Colors)
+         HERO SECTION (Visual Rebrand: Deep Navy #0B1F3B + Blue/Cyan Accents)
          ======================================================================= -->
     <section class="hero-section" id="home">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-grid">
           <!-- Left Column: Copy & Actions -->
           <div class="hero-content">
             <div class="hero-greeting-pill">
+              <span class="greeting-dot" aria-hidden="true"></span>
               <span>Abdisalam Faysal Ali</span>
             </div>
 
             <h1 class="hero-title">
               Building Practical
-              <span class="highlight-coral">Digital Products</span>
+              <span class="hero-title-highlight">Digital Products</span>
             </h1>
 
             <p class="hero-identity">Computer Science Student &amp; Software Developer</p>
@@ -166,20 +168,23 @@
               I'm Abdisalam Faysal Ali, a Computer Science student and software developer focused on building useful web and mobile solutions.
             </p>
 
-            <p class="hero-founder">Founder of DaryeelX</p>
+            <div class="hero-founder-badge">
+              <span class="founder-badge-dot" aria-hidden="true"></span>
+              <span>Founder of <strong>DaryeelX</strong></span>
+            </div>
 
             <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary-coral">
+              <a href="#projects" class="btn btn-primary-blue">
                 <span>View My Work</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </a>
 
-              <a href="assets/resume/Abdisalam_Faysal_Ali_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="hero-resume-btn">
+              <a href="assets/resume/Abdisalam_Faysal_Ali_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary-hero" id="hero-resume-btn">
                 <span>View Resume</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -188,7 +193,7 @@
                 </svg>
               </a>
 
-              <a href="#contact" class="btn btn-secondary">
+              <a href="#contact" class="btn btn-secondary-hero">
                 <span>Contact Me</span>
               </a>
             </div>
@@ -218,20 +223,16 @@
             </div>
           </div>
 
-          <!-- Right Column: Prominent Portrait (Matching Reference Style) -->
+          <!-- Right Column: Prominent Portrait in Navy Frame -->
           <div class="hero-portrait-container">
-            <div class="portrait-glow-circle"></div>
+            <div class="portrait-glow-circle" aria-hidden="true"></div>
             <div class="portrait-frame">
               <picture>
                 <source srcset="assets/images/abdisalam_original.webp" type="image/webp">
                 <img src="assets/images/abdisalam_original.png" alt="Abdisalam Faysal Ali" class="portrait-img" width="1024" height="1024" fetchpriority="high" decoding="async">
               </picture>
-              <div class="portrait-floating-badge">
-                <div>
-                  <div class="portrait-badge-title">Abdisalam Faysal Ali</div>
-                  <div class="portrait-badge-subtitle">Computer Science Student • Software Developer</div>
-                </div>
-                <div class="status-indicator-dot" title="Available for projects &amp; collaboration"></div>
+              <div class="portrait-meta-badge">
+                <span>Somalia · Computer Science</span>
               </div>
             </div>
           </div>
